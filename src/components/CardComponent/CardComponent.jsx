@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "../ListCourses/ListCourses.css";
+import "./cardComponent.css";
 import { motion } from "framer-motion"; //Animation library
 
 import iconAbout from "../ListCourses/Assets/about.png";

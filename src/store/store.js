@@ -5,11 +5,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./actions/auth/authSlice";
 import ComponentReducer from "./actions/componentSlice";
 import emailReducer from "./actions/mail/emailSlice";
+import foroRreducer from "./slices/foroSlice";
 
 export default configureStore({
   reducer: {
     auth: authReducer,
     componente: ComponentReducer,
     email: emailReducer,
+    foro: foroRreducer
   },
 });

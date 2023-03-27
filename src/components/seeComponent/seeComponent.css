@@ -1,12 +1,12 @@
 .containerIcon {
   position: absolute;
   width: 100vw;
-  display: flex;
-  *top: 40vh;
+  display: flex;  
   translate: 0vw -10vw;
   justify-content: center;
 }
 .containerIcon img {
+  width: 25vw;
   width: 25vw;
 }
 .containerSeeComponent {
@@ -56,6 +56,7 @@ iframe.video {
 .containerLinesWork {
   width: 100%;
 }
+
 .lineWork {
   width: 100%;
   border-radius: 15px;
@@ -78,6 +79,7 @@ iframe.video {
 @media screen and (min-width: 570px) {
   .containerIcon {
     justify-content: left;
+    translate: 0vw -3vw;
     translate: 0vw -3vw;
   }
   .containerIcon img {

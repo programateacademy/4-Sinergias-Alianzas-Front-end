@@ -1,0 +1,143 @@
+.containerTitle {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+.containerTitle h1 {
+  background-color: white;
+  width: 60vw;
+  font-size: 4vw;
+  text-align: center;
+}
+.containerDashboard {
+  border: 5px solid green;
+  margin: 40px 5vw 40px 5vw;
+  padding: 5vw 12vw;
+  border-radius: 15px;
+}
+.container_buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container_buttons button {
+  width: 230px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 0 15px;
+  border-radius: 50px;
+  border: none;
+  background-color: green;
+  color: white;
+}
+button.box {
+  margin: 2.5vw;
+}
+button.box1 {
+  width: 150px;
+}
+button.box1 input {
+  width: 80%;
+  border: none;
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+}
+button.box1 input::placeholder {
+  color: white;
+  font-size: 18px;
+}
+.container_buttons img {
+  width: 35px;
+  margin-left: -17px;
+  margin-right: 15px;
+}
+.listCards {
+  margin: 3vh 0 3vh 0;
+  text-align: center;
+}
+.cardComponent {
+  box-shadow: 3px 6px 29px 0px rgba(153, 153, 153, 1);
+  border-radius: 15px;
+  padding: 15px 0 15px 0;
+  margin-top: 40px;
+}
+.cardComponent img {
+  margin: auto;
+}
+.imageCard {
+  width: 80%;
+  height: 40vh;
+}
+.cardComponent h2 {
+  padding: 5px;
+  background-color: #849b1c;
+  color: white;
+  font-size: 5vw;
+}
+.buttons_cards {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.buttons_cards img {
+  width: 17vw;
+  margin: 0 8px;
+}
+.link{
+  text-decoration: none !important;
+}
+@media screen and (min-width: 570px) {
+  .containerTitle {
+    margin-top: 1px;
+  }
+  .containerTitle h1 {
+    width: 30vw;
+    padding: 5px;
+    font-size: 2vw;
+  }
+  .containerDashboard {
+    padding: 1.5vw 5vw;
+    margin: 3vw 8vw;
+  }
+  .container_buttons {
+    flex-direction: row;
+  }
+  .cardComponent {
+    width: 22vw;
+    margin: 0;
+  }
+  .cardComponent h2 {
+    font-size: 1.5vw;
+  }
+  .imageCard {
+    margin: 5px;
+    width: 80%;
+    height: 20vh;
+  }
+  .buttons_cards img {
+    margin-top: 1vh;
+    width: 5vw;
+  }
+  .listCards {
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 820px) {
+  .imageCard {
+    width: 80%;
+    height: 35vh;
+  }
+}

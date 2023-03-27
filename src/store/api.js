@@ -20,3 +20,4 @@ export const updateComponent = (updatedComponentData, id) =>
 
 //Request to change the visibility of the component
 export const deleteComponent = (id) => API.put(`/component/delete/${id}`);
+

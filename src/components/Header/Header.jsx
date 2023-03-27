@@ -1,7 +1,8 @@
 // dependencies
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import Dropdown from "react-bootstrap/Dropdown";
 
 // Redux functions
 import { RESET, logout } from "../../store/actions/auth/authSlice";
@@ -10,7 +11,7 @@ import { RESET, logout } from "../../store/actions/auth/authSlice";
 import { motion } from "framer-motion";
 
 // Components
-import { UserName } from "../../pages/Profile/Profile";
+import { UserName } from "../../pages/BackOffice/Profile/Profile";
 
 // Icons
 import { FaUsersCog, FaUserAlt } from "react-icons/fa";
@@ -20,8 +21,9 @@ import { MdLogout } from "react-icons/md";
 import { Breadcrumb, BreadcrumbItem, Container } from "reactstrap";
 import Logosinergias from "./Assets/Logosinergias.png";
 import "./Header.css";
+import "./HeaderUser.css";
 
-const Header = () => {
+const Header = ({ isAdminOrUser, setIsAdminOrUse }) => {
   /* 
   - =================================
   -    COMPONENT FUNCTIONS
@@ -32,9 +34,6 @@ const Header = () => {
   const dispatch = useDispatch();
 
   //* Function to return to the dashboard from the logo
-  const goHome = () => {
-    navigate("/home");
-  };
 
   //* Function to log out
   const logoutUser = async () => {
@@ -44,17 +43,53 @@ const Header = () => {
 
     navigate("/");
   };
+  // funcionalidad de headerUsuario
 
-  return (
+  const [showMenu, setShowMenu] = useState(false);
+  const handleMenuClick = () => setShowMenu(true);
+  return isAdminOrUser === false ? (
+    <>
+      <nav className="navigation-bar">
+        <div className="logo">
+          <Link to={"/"}>
+            <img src={Logosinergias} alt="Logo" />
+          </Link>
+        </div>
+        <div className="menu">
+          <Link to={"/"} className="menu-button">
+            Caja de herramientas
+          </Link>
+          <Link to={"/foroUser"} className="menu-button">
+            Foro
+          </Link>
+          <Link to={"/login"} className="menu-button">
+            Iniciar sesión
+          </Link>
+        </div>
+        <Dropdown className="menu-button-responsive">
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            Menu
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Link to={"/"} >
+              <Dropdown.Item href="#/action-1">Caja de herramientas</Dropdown.Item>
+            </Link>
+            < Link to={"/foroUser"} >
+              <Dropdown.Item href="#/action-2">Foro</Dropdown.Item>
+            </ Link >
+            <Link to={"/login"} >
+              <Dropdown.Item href="#/action-3">Iniciar sesión</Dropdown.Item>
+            </Link >
+          </Dropdown.Menu>
+        </Dropdown>
+      </nav>
+    </>
+  ) : (
     <>
       <header className="header_container">
         {/* Logo */}
-        <img
-          src={Logosinergias}
-          alt="Logo Sinergias"
-          className="header_logo"
-          onClick={goHome}
-        />
+        <img src={Logosinergias} alt="Logo Sinergias" className="header_logo" />
 
         {/* Navigation */}
         <nav>

@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 15px;
 }
 .container_buttons button {
   width: 230px;
@@ -90,6 +91,9 @@ button.box1 input::placeholder {
 .buttons_cards img {
   width: 17vw;
   margin: 0 8px;
+}
+.link{
+  text-decoration: none !important;
 }
 @media screen and (min-width: 570px) {
   .containerTitle {

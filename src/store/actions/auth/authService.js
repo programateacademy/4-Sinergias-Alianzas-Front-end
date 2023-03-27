@@ -4,7 +4,7 @@ import axios from "axios";
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export const API_URL = `${BACKEND_URL}/api/users/`;
 
-//* validate email+
+//* Validar email+
 export const validateEmail = (email) => {
   return email.match(
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -13,7 +13,7 @@ export const validateEmail = (email) => {
 
 /*
 - =================================
--         register user
+-         Registrar usuario
 - =================================
 */
 const register = async (userData) => {
@@ -24,7 +24,7 @@ const register = async (userData) => {
 
 /*
 - =================================
--         Log in
+-         Iniciar Sesión
 - =================================
 */
 const login = async (userData) => {
@@ -35,7 +35,7 @@ const login = async (userData) => {
 
 /*
 - =================================
--         Sign off
+-         Cerrar Sesión
 - =================================
 */
 const logout = async () => {
@@ -46,7 +46,7 @@ const logout = async () => {
 
 /*
 - =================================
--   Login Status
+-   Estado del inicio de Sesión
 - =================================
 */
 const getLoginStatus = async () => {
@@ -57,7 +57,7 @@ const getLoginStatus = async () => {
 
 /*
 - =================================
--       user profile
+-       Perfil del usuario
 - =================================
 */
 const getUser = async () => {
@@ -68,7 +68,7 @@ const getUser = async () => {
 
 /*
 - =================================
--   Send verification email
+-   Enviar email de verificación
 - =================================
 */
 const sendVerificationEmail = async () => {
@@ -139,6 +139,17 @@ const getUsers = async () => {
 
 /*
 - =================================
+-       eliminar usuario
+- =================================
+*/
+const deleteUser = async (id) => {
+  const response = await axios.delete(API_URL + `/${id}`);
+
+  return response.data;
+};
+
+/*
+- =================================
 -   Enviar Código inicio de sesión
 - =================================
 */
@@ -173,6 +184,7 @@ const authService = {
   getUsers,
   sendLoginCode,
   loginWithCode,
+  deleteUser
 };
 
 export default authService;

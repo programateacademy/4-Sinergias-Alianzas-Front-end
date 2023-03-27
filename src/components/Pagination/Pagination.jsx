@@ -3,10 +3,11 @@ import React from "react";
 
 // styles
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
+import "./css/Pagination.css";
 
 const PaginationC = () => {
   return (
-    <Pagination size="sm">
+    <Pagination size="sm" className="pagination-container">
       <PaginationItem>
         <PaginationLink href="#" previous>
           Anterior
